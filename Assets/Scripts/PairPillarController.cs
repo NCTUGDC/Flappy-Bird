@@ -13,4 +13,11 @@ public class PairPillarController : MonoBehaviour
             Destroy(this.gameObject);
         }
 	}
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            GameManager.Instance.Score += 1;
+        }
+    }
 }
