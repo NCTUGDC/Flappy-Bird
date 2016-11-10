@@ -7,7 +7,7 @@ public class PillarController : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Scene");
+            GameManager.Instance.GameOver();
         }
     }
 }

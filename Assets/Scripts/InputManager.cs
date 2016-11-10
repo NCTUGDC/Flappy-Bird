@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //0 left 1 right 2 middle
+        if (!GameManager.Instance.IsGameOver && Input.GetMouseButtonDown(0)) //0 left 1 right 2 middle
         {
             birdController.Fly();
         }

@@ -15,7 +15,7 @@ public class PairPillarController : MonoBehaviour
 	}
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (!GameManager.Instance.IsGameOver && collider.gameObject.tag == "Player")
         {
             GameManager.Instance.Score += 1;
         }

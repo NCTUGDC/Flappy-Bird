@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Text scoreText;
+    [SerializeField]
+    private GameObject gameOverPanel;
 
     private int score;
     public int Score
@@ -18,9 +21,20 @@ public class GameManager : MonoBehaviour
             scoreText.text = score.ToString();
         }
     }
+    public bool IsGameOver { get; private set; }
 
     void Awake()
     {
         Instance = this;
+    }
+
+    public void GameOver()
+    {
+        gameOverPanel.SetActive(true);
+        IsGameOver = true;
+    }
+    public void Restart()
+    {
+        SceneManager.LoadScene("Scene");
     }
 }
